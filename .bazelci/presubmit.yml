@@ -20,7 +20,6 @@ tasks:
     test_targets:
       - "//:all_tests"
   ubuntu2004_bzlmod:
-    bazel: last_green
     platform: ubuntu2004
     build_flags:
       - "--enable_bzlmod"

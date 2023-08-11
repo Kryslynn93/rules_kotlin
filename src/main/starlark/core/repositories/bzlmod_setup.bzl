@@ -54,6 +54,13 @@ def _kt_configure_impl(_module_ctx):
         executable = True,
     )
 
+    # This tarball intentionally does not have a SHA256 because the upstream URL can change without notice
+    # For more context: https://github.com/bazelbuild/bazel-toolchains/blob/0c1f7c3c5f9e63f1e0ee91738b964937eea2d3e0/WORKSPACE#L28-L32
+    http_file(
+        name = "buildkite_config",
+        urls = versions.RBE.URLS,
+    )
+
 kt_bzlmod_ext = module_extension(
     implementation = _kt_configure_impl,
 )
